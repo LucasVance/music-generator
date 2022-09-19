@@ -4,8 +4,5 @@
     "authors": "Lucas Vance",
     "version": "0.1.0",
     "main": "js/main.js",
-    "dependencies": {
-        "bootstrap": "^5.2.1"
-    },
     "type": "module"
 }
