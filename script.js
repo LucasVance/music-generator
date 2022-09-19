@@ -12,14 +12,14 @@ function generateFactorOf(num) {
     return num ** Math.floor(Math.random() * (max - min) + min);
 }
 
-const reps = 4;
+const bars = 8;
+let totalBeats = 0;
 
-for (let i = 0; i < reps; i++) {
-    chord = Math.floor(Math.random() * (8 - 0) + 0);
+while (totalBeats < bars * 4) {
+    chord = Math.floor(Math.random() * 8);
     beats = generateFactorOf(2);
+    totalBeats += beats;
     chords.push({ chord: chord, beats: beats });
 }
-
-chords.push({ chord: 1, beats: 4 });
 
 console.log(chords);
