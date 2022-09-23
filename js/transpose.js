@@ -51,7 +51,6 @@ export function transpose(note, key) {
 
     default:
       return "Please enter a valid key.";
-      break;
   }
 
   return key[note - 1];
