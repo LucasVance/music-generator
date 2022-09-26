@@ -19,5 +19,3 @@ export function generateChords(bars) {
 
   return chords;
 }
-
-console.log(generateChords(8));
