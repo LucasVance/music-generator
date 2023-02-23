@@ -1,4 +1,5 @@
-export function transpose(note, key) {
+export function transpose(note, currentKey) {
+  // List of keys as an object consisting of named arrays
   const keys = {
     c: ["C", "D", "E", "F", "G", "A", "B"],
     cs: ["C#", "D#", "F", "F#", "G#", "A#", "C"],
@@ -14,44 +15,45 @@ export function transpose(note, key) {
     b: ["B", "C#", "D#", "E", "F#", "G#", "A#"],
   };
 
-  switch (key) {
+  // Set current key
+  switch (currentKey) {
     case "c":
-      key = keys.c;
+      currentKey = keys.c;
       break;
     case "cs":
-      key = keys.cs;
+      currentKey = keys.cs;
       break;
     case "d":
-      key = keys.d;
+      currentKey = keys.d;
       break;
     case "ds":
-      key = keys.ds;
+      currentKey = keys.ds;
       break;
     case "e":
-      key = keys.e;
+      currentKey = keys.e;
       break;
     case "f":
-      key = keys.f;
+      currentKey = keys.f;
       break;
     case "g":
-      key = keys.g;
+      currentKey = keys.g;
       break;
     case "gs":
-      key = keys.gs;
+      currentKey = keys.gs;
       break;
     case "a":
-      key = keys.a;
+      currentKey = keys.a;
       break;
     case "as":
-      key = keys.as;
+      currentKey = keys.as;
       break;
     case "b":
-      key = keys.b;
+      currentKey = keys.b;
       break;
 
     default:
       return "Please enter a valid key.";
   }
 
-  return key[note - 1];
-}
+  return currentKey[note - 1];
+};
