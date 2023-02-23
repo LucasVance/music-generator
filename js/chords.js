@@ -17,5 +17,6 @@ export function generateChords(bars) {
     }
   }
 
+  // Return the final chords array to user
   return chords;
 }
