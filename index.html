@@ -1,73 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <title>Music Generator</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="" />
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
 
-<head>
-  <title>Music Generator</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="" />
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/style.css">
-</head>
+    <body>
+        <h1 class="title">Music Generator</h1>
+        <div class="container">
+            <label for="bars">Bars:</label>
+            <input type="text" class="input" id="bars" />
 
-<body>
-  <h1 class="title">Music Generator</h1>
-  <div class="container">
+            <div class="container">
+                <input type="radio" name="key" id="c" value="c" checked />
+                <label for="C">C</label>
 
-    <label for="bars">Bars:</label>
-    <input type="text" class="input" id="bars" />
+                <input type="radio" name="key" id="cs" value="cs" />
+                <label for="cs">C#</label>
 
-    <div class="container">
-      <input type="radio" name="key" id="c" value="c" checked>
-      <label for="C">C</label>
+                <input type="radio" name="key" id="d" value="d" />
+                <label for="d">D</label>
 
-      <input type="radio" name="key" id="cs" value="cs">
-      <label for="cs">C#</label>
+                <input type="radio" name="key" id="ds" value="ds" />
+                <label for="">D#</label>
 
-      <input type="radio" name="key" id="d" value="d">
-      <label for="d">D</label>
+                <input type="radio" name="key" id="e" value="e" />
+                <label for="">E</label>
 
-      <input type="radio" name="key" id="ds" value="ds">
-      <label for="">D#</label>
+                <input type="radio" name="key" id="f" value="f" />
+                <label for="">F</label>
 
-      <input type="radio" name="key" id="e" value="e">
-      <label for="">E</label>
+                <input type="radio" name="key" id="fs" value="fs" />
+                <label for="">F#</label>
 
-      <input type="radio" name="key" id="f" value="f">
-      <label for="">F</label>
+                <input type="radio" name="key" id="g" value="g" />
+                <label for="">G</label>
 
-      <input type="radio" name="key" id="fs" value="fs">
-      <label for="">F#</label>
+                <input type="radio" name="key" id="gs" value="gs" />
+                <label for="">G#</label>
 
-      <input type="radio" name="key" id="g" value="g">
-      <label for="">G</label>
+                <input type="radio" name="key" id="a" value="a" />
+                <label for="">A</label>
 
-      <input type="radio" name="key" id="gs" value="gs">
-      <label for="">G#</label>
+                <input type="radio" name="key" id="as" value="as" />
+                <label for="">A#</label>
 
-      <input type="radio" name="key" id="a" value="a">
-      <label for="">A</label>
+                <input type="radio" name="key" id="b" value="b" />
+                <label for="">B</label>
+            </div>
 
-      <input type="radio" name="key" id="as" value="as">
-      <label for="">A#</label>
+            <button type="button" class="button" id="submitBtn">
+                Generate Chords
+            </button>
 
-      <input type="radio" name="key" id="b" value="b">
-      <label for="">B</label>
-    </div>
+            <div class="container">
+                <p>Result:</p>
+                <p id="result">No chords have been generated yet.</p>
+            </div>
+        </div>
 
-    <button type="button" class="button" id="submitBtn">
-      Generate Chords
-    </button>
-
-    <div class="container">
-      <p>Result:</p>
-      <p id="result">No chords have been generated yet.</p>
-    </div>
-  </div>
-
-  <script src="./js/transpose.js" type="module"></script>
-  <script src="./js/chords.js" type="module"></script>
-  <script src="./index.js" type="module"></script>
-</body>
-
+        <script src="./js/transpose.js" type="module"></script>
+        <script src="./js/chords.js" type="module"></script>
+        <script src="./index.js" type="module"></script>
+    </body>
 </html>
