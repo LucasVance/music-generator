@@ -1,4 +1,4 @@
-function transpose(note, currentKey) {
+export function transpose(note, currentKey) {
     // List of keys as an object consisting of named arrays
     const keys = {
         C: ["nothing", "C", "D", "E", "F", "G", "A", "B"],
