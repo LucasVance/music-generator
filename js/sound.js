@@ -34,7 +34,8 @@ export function playChord(notes, duration) {
     group.play();
 
     // Stop sound after
-    setTimeout(function () {
-        sound.stop();
+    setTimeout(() => {
+        console.log("trying to stop");
+        group.stop();
     }, duration);
 }
