@@ -1,14 +1,12 @@
 // Import modules from /js folder
-import { generateChords } from "./js/chords.js";
-import { transpose } from "./js/transpose.js"
+import { generateChords, parseChord } from "./js/chords.js";
+import { transpose } from "./js/transpose.js";
 import { frequency } from "./js/frequency.js";
-import { synth } from "./js/sound.js";
 
 // Declare page elements
 const submitBtn = document.getElementById("submitBtn");
 const bars = document.getElementById("bars");
 const resultBox = document.getElementById("result");
-const playButton = document.getElementById("playButton");
 
 // On click
 submitBtn.addEventListener("click", () => {
@@ -30,6 +28,3 @@ submitBtn.addEventListener("click", () => {
     // Set the result box to the output
     resultBox.innerText = output;
 });
-
-// On click, play synth
-playButton.addEventListener("click", synth);
