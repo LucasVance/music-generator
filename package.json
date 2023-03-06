@@ -17,5 +17,8 @@
     "bugs": {
         "url": "https://github.com/LucasVance/music-generator/issues"
     },
-    "homepage": "https://github.com/LucasVance/music-generator#readme"
+    "homepage": "https://github.com/LucasVance/music-generator#readme",
+    "dependencies": {
+        "pizzicato": "^0.6.4"
+    }
 }
