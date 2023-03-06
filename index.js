@@ -1,6 +1,7 @@
 // Import modules from /js folder
 import { generateChords } from "./js/chords.js";
 import { transpose } from "./js/transpose.js";
+import { frequency } from "./js/frequency.js";
 
 // Declare page elements
 const submitBtn = document.getElementById("submitBtn");
