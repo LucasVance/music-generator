@@ -10,12 +10,15 @@ const bars = document.getElementById("bars");
 const resultBox = document.getElementById("result");
 const playButton = document.getElementById("playButton");
 
+// Create empty chords array
+let chords = [];
+
 // On click
 submitBtn.addEventListener("click", () => {
     // Get current key from radio buttons
     const key = document.querySelector('input[name="key"]:checked').value;
     // Generate array of chords
-    const chords = generateChords(bars.value);
+    chords = generateChords(bars.value);
     console.log(chords);
     // Declare empty string that will be added to
     let output = "";
@@ -36,10 +39,16 @@ playButton.addEventListener("click", () => {
     // For now, play a simple A4maj chord
     // Pass notes to parseChord and frequency functions
     // Outputs array like [ 440, 554.24, 659.2 ] for A4maj
-    const chordNotes = parseChord("A4", "major").map(frequency);
-    console.log(chordNotes);
 
-    playChord(chordNotes);
+    //playChord(parseChord("A4", "major").map(frequency), tempo(1, 120));
 
-    console.log(bars(4, 120));
+    console.log(chords.map(transpose));
+
+    // Loop playing the chords
+    for (let i = 0; i < chords.length; i++) {
+        playChord(
+            parseChord(chords[i].chord + "4", "major").map(frequency),
+            tempo(1, 120)
+        );
+    }
 });
