@@ -1,6 +1,7 @@
 // Import modules from /js folder
 import { generateChords } from "./js/chords.js";
-import { transpose } from "./js/transpose.js";
+import { transpose } from "./js/transpose.js"
+import { frequency } from "./js/frequency.js";
 import { synth } from "./js/sound.js";
 
 // Declare page elements
