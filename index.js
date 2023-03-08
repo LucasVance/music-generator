@@ -10,24 +10,25 @@ const bars = document.getElementById("bars");
 const resultBox = document.getElementById("result");
 const playButton = document.getElementById("playButton");
 
-// Create empty chords array
-let chords = [];
+// Create empty chords array and key
+let generatedChords = [];
+let key = "";
 
 // On click
 submitBtn.addEventListener("click", () => {
     // Get current key from radio buttons
-    const key = document.querySelector('input[name="key"]:checked').value;
+    key = document.querySelector('input[name="key"]:checked').value;
     // Generate array of chords
-    chords = generateChords(bars.value);
-    console.log(chords);
+    generatedChords = generateChords(bars.value);
+    console.log(generatedChords);
     // Declare empty string that will be added to
     let output = "";
 
     // Loop until chords is filled according to amount of bars inputted by user
-    for (let i = 0; i < chords.length; i++) {
+    for (let i = 0; i < generatedChords.length; i++) {
         // Add string to output with newline
-        output += `Play ${transpose(chords[i].chord, key)} for ${
-            chords[i].beats
+        output += `Play ${transpose(generatedChords[i].chord, key)} for ${
+            generatedChords[i].beats
         } beats \n`;
     }
     // Set the result box to the output
@@ -36,19 +37,22 @@ submitBtn.addEventListener("click", () => {
 
 // Play chord on click
 playButton.addEventListener("click", () => {
-    // For now, play a simple A4maj chord
-    // Pass notes to parseChord and frequency functions
-    // Outputs array like [ 440, 554.24, 659.2 ] for A4maj
+    // transpose generatedChords array
+    const transposedChords = generatedChords.map(
+        (currentChord) => transpose(currentChord.chord, key) + "4"
+    );
 
-    //playChord(parseChord("A4", "major").map(frequency), tempo(1, 120));
+    console.log(transposedChords);
 
-    console.log(chords.map(transpose));
+    // loop through converting the transposedChords array to currentChord
+    // array and play that chord after converting to frequencies
 
-    // Loop playing the chords
-    for (let i = 0; i < chords.length; i++) {
-        playChord(
-            parseChord(chords[i].chord + "4", "major").map(frequency),
-            tempo(1, 120)
-        );
+    const frequenciesNotes = [];
+
+    for (let i = 0; i < transposedChords.length; i++) {
+        console.log("do dis first");
+        const parsedChord = parseChord(transposedChords[i], "major");
+
+        playChord(parsedChord.map(frequency), 1000);
     }
 });
