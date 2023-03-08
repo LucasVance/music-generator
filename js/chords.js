@@ -20,3 +20,41 @@ export function generateChords(bars) {
     // Return the final chords array to user
     return chords;
 }
+
+// Takes in a note and chord quality and outputs the notes of the chord
+export function parseChord(chord, quality) {
+    // Define the notes of a major and minor chord relative to the root note
+    const majorIntervals = [0, 4, 7];
+    const minorIntervals = [0, 3, 7];
+
+    // Convert the chord name to the root note and octave
+    const noteRegex = /^([A-G]#?)(\d)$/;
+    const [, noteLetter, octave] = chord.match(noteRegex);
+    const rootNoteMidiNumber =
+        (parseInt(octave) + 1) * 12 +
+        "C C#D D#E F F#G G#A A#B ".indexOf(noteLetter + " ") / 2;
+
+    // Determine which intervals to use based on chord quality
+    const intervals = quality === "major" ? majorIntervals : minorIntervals;
+
+    // Calculate the MIDI numbers of each note in the chord
+    const chordNotesMidiNumbers = intervals.map(
+        (interval) => rootNoteMidiNumber + interval
+    );
+
+    // Convert the MIDI numbers back to note names
+    const noteNames = chordNotesMidiNumbers
+        .map((midiNumber) => {
+            const octave = Math.floor(midiNumber / 12) - 1;
+            const noteIndex = midiNumber % 12;
+            return (
+                "C C#D D#E F F#G G#A A#B ".slice(
+                    noteIndex * 2,
+                    noteIndex * 2 + 2
+                ) + octave
+            );
+        })
+        .map((name) => name.replace(/\s/g, "")); // Remove whitespace from each string element
+
+    return noteNames;
+}
