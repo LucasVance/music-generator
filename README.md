@@ -21,9 +21,12 @@
 
 ## Code flowmap
 
+### Chord generation
 0. Create empty array of objects (**chords**) that will store chord progression data
 1. Start with I chord
 2. Generate random number that will correspond to a chord later
 3. Generate random rest time of factors of 2 with a max of 8
 4. Store this in the **chords** array
 5. Repeat steps 1-4 **x** many times
+
+### Chord synthesization
