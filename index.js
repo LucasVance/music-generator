@@ -5,6 +5,7 @@ import { frequency } from "./js/frequency.js";
 
 // Declare page elements
 const submitBtn = document.getElementById("submitBtn");
+const playBtn = document.getElementById("playBtn");
 const bars = document.getElementById("bars");
 const resultBox = document.getElementById("result");
 
@@ -28,3 +29,6 @@ submitBtn.addEventListener("click", () => {
     // Set the result box to the output
     resultBox.innerText = output;
 });
+
+// Play sound on click
+playBtn.addEventListener("click", () => {});
