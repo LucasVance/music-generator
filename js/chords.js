@@ -7,7 +7,7 @@ export function generateChords(bars) {
 
     // While totalBeats is not up to targetBeats, generate random chords
     while (totalBeats < targetBeats) {
-        const chord = Math.floor(Math.random() * 8);
+        const chord = Math.floor(Math.random() * 7) + 1;
         const beats = 2 ** Math.floor(Math.random() * 4);
 
         // Only push to the chords array if the new amount of beats won't overflow the targetBeats
