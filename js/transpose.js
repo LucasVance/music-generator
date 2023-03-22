@@ -26,3 +26,19 @@ export function transpose(note, currentKey) {
     // Return the note at the index of note - 1 in the keyArray
     return keyArray[note];
 }
+
+export function tempo(measures, tempo) {
+    // Calculate the duration of one beat in milliseconds
+    // 60,000 is milliseconds in a minute
+    // Divided by the input bpm
+    const beatDuration = 60000 / tempo;
+
+    // Calculate the duration of one measure in milliseconds
+    const measureDuration = beatDuration * 4;
+
+    // Calculate the duration of all measures in milliseconds
+    const totalDuration = measureDuration * measures;
+
+    // Return the total duration in milliseconds
+    return totalDuration;
+}
